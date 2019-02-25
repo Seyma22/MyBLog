@@ -13,11 +13,14 @@ namespace MyBlog
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            //Home page route defined. This request was responsed by Post Controller Index Action
+
+            routes.MapRoute("AnaSayfa", "", new { controller = "Posts", action = "Index" }); //Anonim bir tip yaratıyoruz new ile daha sonra başka yerdeb ulaşamaycağımız
+            routes.MapRoute("Login", "login", new { controller = "Auth", action = "Login" }); //Anonim bir tip yaratıyoruz new ile daha sonra başka yerdeb ulaşamaycağımız
+            //Name,url adı,..
+
+
+
         }
     }
 }
